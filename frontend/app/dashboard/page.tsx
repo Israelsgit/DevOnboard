@@ -77,7 +77,7 @@ export default function DashboardPage() {
     }
 
     return (
-        <div className="h-screen flex flex-col bg-slate-50 dark:bg-slate-950 overflow-hidden">
+        <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-950 lg:h-screen lg:overflow-hidden">
             <div className="border-b bg-white dark:bg-slate-900 p-4 flex items-center justify-between shadow-sm shrink-0">
                 <div className="flex items-center gap-4">
                     <Button variant="ghost" size="sm" onClick={() => router.push("/")} className="gap-2">
@@ -90,26 +90,26 @@ export default function DashboardPage() {
                 </div>
             </div>
 
-            <div className="flex-1 overflow-hidden p-4 lg:p-6">
+            <div className="flex-1 p-4 lg:p-6 lg:overflow-hidden">
                 {loading ? (
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 h-full">
-                        <div className="lg:col-span-2 space-y-6 overflow-y-auto pr-2">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:h-full">
+                        <div className="lg:col-span-2 space-y-6 lg:overflow-y-auto lg:pr-2">
                             <Skeleton className="h-48 w-full" />
                             <Skeleton className="h-64 w-full" />
                             <Skeleton className="h-96 w-full" />
                         </div>
-                        <div className="lg:col-span-1 h-full">
+                        <div className="lg:col-span-1 lg:h-full">
                             <Skeleton className="h-full w-full" />
                         </div>
                     </div>
                 ) : (
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 h-full">
-                        <div className="lg:col-span-2 space-y-6 overflow-y-auto pr-2 pb-6">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:h-full">
+                        <div className="lg:col-span-2 space-y-6 lg:overflow-y-auto lg:pr-2 lg:pb-6">
                             {metadata && <RepoCard metadata={metadata} />}
                             {commits.length > 0 && <CommitGraph stats={commits} />}
                             {tree.length > 0 && <FileTree tree={tree} />}
                         </div>
-                        <div className="lg:col-span-1 h-full overflow-hidden">
+                        <div className="lg:col-span-1 lg:h-full lg:overflow-hidden">
                             <SummaryPanel
                                 summary={summary}
                                 onGenerate={handleGenerateSummary}
