@@ -39,7 +39,7 @@ function FileTreeNode({ node, level = 0 }: FileTreeNodeProps) {
                         <FileCode className="h-4 w-4 mr-2 text-gray-500" />
                     </>
                 )}
-                <span className="truncate whitespace-nowrap">{node.path}</span>
+                <span className="whitespace-nowrap">{node.path}</span>
             </div>
             {isOpen && hasChildren && (
                 <div>
@@ -63,10 +63,12 @@ export function FileTree({ tree }: FileTreeProps) {
                 <CardTitle className="text-lg">File Explorer</CardTitle>
             </CardHeader>
             <CardContent className="p-0">
-                <div className="h-[400px] overflow-auto px-4 pb-4">
-                    {tree.map((node) => (
-                        <FileTreeNode key={node.path} node={node} />
-                    ))}
+                <div className="px-4 pb-4 overflow-x-auto">
+                    <div className="min-w-max">
+                        {tree.map((node) => (
+                            <FileTreeNode key={node.path} node={node} />
+                        ))}
+                    </div>
                 </div>
             </CardContent>
         </Card>
