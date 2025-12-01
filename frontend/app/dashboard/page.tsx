@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { api, RepoMetadata, CommitStats, FileNode, RepoSummary } from "@/lib/api";
 import { RepoCard } from "@/components/RepoCard";
@@ -11,7 +11,9 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 
-export default function DashboardPage() {
+export const dynamic = "force-dynamic";
+
+function DashboardContent() {
     const searchParams = useSearchParams();
     const router = useRouter();
     const owner = searchParams.get("owner");
@@ -120,5 +122,13 @@ export default function DashboardPage() {
                 )}
             </div>
         </div>
+    );
+}
+
+export default function DashboardPage() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <DashboardContent />
+        </Suspense>
     );
 }

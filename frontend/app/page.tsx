@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Github } from "lucide-react";
 import { api } from "@/lib/api";
 
 export default function Home() {
@@ -37,8 +37,8 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-center p-24 bg-slate-50 dark:bg-slate-950">
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
-          <div className="mx-auto bg-slate-100 p-3 rounded-full w-fit mb-4">
-            <Github className="h-8 w-8" />
+          <div className="flex items-center justify-center">
+            <Image src="/icon.svg" alt="DevOnboard Logo" width={50} height={50} />
           </div>
           <CardTitle className="text-2xl font-bold">Devonboard</CardTitle>
           <CardDescription>
