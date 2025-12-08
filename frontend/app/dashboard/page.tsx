@@ -79,8 +79,8 @@ function DashboardContent() {
     }
 
     return (
-        <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-950 lg:h-screen lg:overflow-hidden">
-            <div className="border-b bg-white dark:bg-slate-900 p-4 flex items-center justify-between shadow-sm shrink-0">
+        <div className="min-h-screen flex flex-col bg-[#0B0B0B] text-white lg:h-screen lg:overflow-hidden">
+            <div className="border-b border-white/10 bg-[#0B0B0B] p-4 flex items-center justify-between shadow-sm shrink-0">
                 <div className="flex items-center gap-4">
                     <Button variant="ghost" size="sm" onClick={() => router.push("/")} className="gap-2">
                         <ArrowLeft className="h-4 w-4" />

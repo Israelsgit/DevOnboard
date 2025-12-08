@@ -19,7 +19,7 @@ function FileTreeNode({ node, level = 0 }: FileTreeNodeProps) {
         <div>
             <div
                 className={cn(
-                    "flex items-center py-1 px-2 hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer rounded text-sm",
+                    "flex items-center py-1 px-2 hover:bg-teal-500/10 cursor-pointer rounded text-sm",
                     level > 0 && "ml-4"
                 )}
                 onClick={() => hasChildren && setIsOpen(!isOpen)}
@@ -31,7 +31,7 @@ function FileTreeNode({ node, level = 0 }: FileTreeNodeProps) {
                         ) : (
                             <div className="w-5" />
                         )}
-                        <Folder className="h-4 w-4 mr-2 text-blue-500" />
+                        <Folder className="h-4 w-4 mr-2 text-teal-500" />
                     </>
                 ) : (
                     <>

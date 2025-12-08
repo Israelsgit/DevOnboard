@@ -20,7 +20,7 @@ export function RepoCard({ metadata }: RepoCardProps) {
                         <span>{metadata.stars} Stars</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                        <GitFork className="h-4 w-4 text-blue-500" />
+                        <GitFork className="h-4 w-4 text-teal-500" />
                         <span>{metadata.forks} Forks</span>
                     </div>
                     <div className="flex items-center space-x-2">
@@ -36,7 +36,7 @@ export function RepoCard({ metadata }: RepoCardProps) {
                     <h4 className="text-sm font-semibold mb-2">Languages</h4>
                     <div className="flex flex-wrap gap-2">
                         {Object.keys(metadata.languages).slice(0, 5).map((lang) => (
-                            <span key={lang} className="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded text-xs">
+                            <span key={lang} className="px-2 py-1 bg-white/5 rounded text-xs border border-white/10">
                                 {lang}
                             </span>
                         ))}
