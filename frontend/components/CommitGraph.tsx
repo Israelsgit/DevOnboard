@@ -42,8 +42,8 @@ export function CommitGraph({ stats }: CommitGraphProps) {
                     >
                         <defs>
                             <linearGradient id="fillGradient" x1="0" y1="0" x2="0" y2="1">
-                                <stop offset="5%" stopColor="#9333ea" stopOpacity={0.8} />
-                                <stop offset="95%" stopColor="#9333ea" stopOpacity={0.1} />
+                                <stop offset="5%" stopColor="#14b8a6" stopOpacity={0.8} />
+                                <stop offset="95%" stopColor="#14b8a6" stopOpacity={0.1} />
                             </linearGradient>
                         </defs>
                         <CartesianGrid vertical={false} />
@@ -63,7 +63,7 @@ export function CommitGraph({ stats }: CommitGraphProps) {
                             type="natural"
                             fill="url(#fillGradient)"
                             fillOpacity={1}
-                            stroke="#9333ea"
+                            stroke="#14b8a6"
                         />
                     </AreaChart>
                 </ChartContainer>
